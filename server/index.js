@@ -1,4 +1,13 @@
+import dotenv from 'dotenv';
 import express from 'express';
+import mongoose from 'mongoose';
+
+dotenv.config();
+
+await mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log('connected to db'))
+  .catch((err) => console.log(err));
 
 const app = express();
 
