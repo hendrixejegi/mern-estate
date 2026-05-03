@@ -7,17 +7,21 @@ import SignUp from './pages/sign-up.jsx';
 import About from './pages/about.jsx';
 import Profile from './pages/profile.jsx';
 import App from './App.jsx';
+import { store } from './redux/store.js';
+import { Provider } from 'react-redux';
 
 createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
-    <App>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/sign-in" element={<SignIn />} />
-        <Route path="/sign-up" element={<SignUp />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/profile" element={<Profile />} />
-      </Routes>
-    </App>
-  </BrowserRouter>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <App>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
+      </App>
+    </BrowserRouter>
+  </Provider>,
 );
