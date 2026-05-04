@@ -11,6 +11,7 @@ import { persistor, store } from './redux/store.js';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { PrivateRoute } from './components/PrivateRoute.jsx';
+import CreateListing from './pages/create-listing.jsx';
 
 createRoot(document.getElementById('root')).render(
   <Provider store={store}>
@@ -24,6 +25,7 @@ createRoot(document.getElementById('root')).render(
             <Route path="/about" element={<About />} />
             <Route element={<PrivateRoute />}>
               <Route path="/profile" element={<Profile />} />
+              <Route path="/create-listing" element={<CreateListing />} />
             </Route>
           </Routes>
         </App>
